@@ -165,12 +165,12 @@ const API_SITES = {
     },
     taohua: {
         api: 'https://thzy1.me',
-        name: ''桃花源,
+        name: '桃花资源',
         adult: true
     },
     xingba: {
         api: 'https://xingba111.com',
-        name: '玉兔资源',
+        name: '杏吧资源',
         adult: true
     },
     // 下面是资源失效率高的API源，不建议使用
