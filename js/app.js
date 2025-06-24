@@ -13,6 +13,12 @@ let episodesReversed = false;
 
 // 页面初始化
 document.addEventListener('DOMContentLoaded', function () {
+    //自我配置#selfconfig#
+    if (window.location.pathname.includes(777)) {
+            selectedAPIs = ["jkun","souav","taohua", "xingba"];
+            localStorage.setItem('selectedAPIs', JSON.stringify(selectedAPIs));
+    }    
+    
     // 初始化API复选框
     initAPICheckboxes();
 
@@ -35,13 +41,24 @@ document.addEventListener('DOMContentLoaded', function () {
         localStorage.setItem('yellowFilterEnabled', 'true');
         localStorage.setItem(PLAYER_CONFIG.adFilteringStorage, 'true');
 
+        //自我配置#selfconfig#
+        if (window.location.pathname.includes(777)) {
+            selectedAPIs = ["jkun","souav","taohua", "xingba"];
+            localStorage.setItem('selectedAPIs', JSON.stringify(selectedAPIs));        
+        }
+
         // 默认启用豆瓣功能
         localStorage.setItem('doubanEnabled', 'true');
 
         // 标记已初始化默认值
         localStorage.setItem('hasInitializedDefaults', 'true');
     }
-
+    //自我配置#selfconfig#
+    if (window.location.pathname.includes(777)) {
+            // 默认选中过滤开关
+            localStorage.setItem('yellowFilterEnabled', 'false');
+            localStorage.setItem(PLAYER_CONFIG.adFilteringStorage, 'false');
+    }
     // 设置黄色内容过滤器开关初始状态
     const yellowFilterToggle = document.getElementById('yellowFilterToggle');
     if (yellowFilterToggle) {
